@@ -23,23 +23,23 @@ def converter(binary):
     return pre
     
 def long_conversion(binary):
-    binary = str(binary)
-    final = ""
+    string_binary = str(binary)
+    output = ""
     for it in binary.split():
         final += f"{str(converter(it))} "
         
-    return final
+    return output
 
 def is_whole(n):
     return n % 1 == 0
 
-def convert_to_binary(asci):
-    asci_txt = str(asci)
+def convert_to_binary(ascii_input):
+    string_ascii = str(asci)
     binary = ""
     
-    while round(asci) != 0:
+    while round(ascii_input) != 0:
         #print(f"pre math: {asci}")
-        m = int(asci) / 2
+        m = int(ascii_input) / 2
         if is_whole(m):
             binary += "0"
         else:
@@ -51,12 +51,11 @@ def convert_to_binary(asci):
         
     return binary[::-1]
 
-def convert_all_to_binary(in_ascii):
+def convert_all_to_binary(ascii_input):
     binary = ""
-    for it in str(in_ascii).split():
-        b = convert_to_binary(int(it))
-        binary += b
-        binary += " "
+    for asc in str(ascii_input).split():
+        b = convert_to_binary(int(asc))
+        binary += f"{b} "
     return binary
 
 # 79 = 1001111
