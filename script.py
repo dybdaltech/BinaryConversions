@@ -29,7 +29,13 @@ elif args[0] == '-t':
             output:         {b}
     """)
 
-
+else: 
+    print(f"""
+        Error: Needs either -t or -b. 
+        Example: .\script.py -t "Text string"
+        Example: .\script.py -b "0111 1001"
+        
+    """)
 
 
 
